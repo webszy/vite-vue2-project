@@ -4,7 +4,7 @@ import { createVuePlugin } from 'vite-plugin-vue2'
 import WindiCSS from "vite-plugin-windicss"
 import usePluginImport from 'vite-plugin-importer'
 import legacy from '@vitejs/plugin-legacy'
-import viteCompression from 'vite-plugin-compression';
+import viteCompression from 'vite-plugin-compression'
 import ScriptSetup from 'unplugin-vue2-script-setup/vite'
 import eslintPlugin from "@nabla/vite-plugin-eslint"
 import PostcssPxtorem from 'postcss-pxtorem'

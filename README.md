@@ -52,4 +52,4 @@
 + 其他不被@vue/composition-api 支持的语法
 
 ## TODO
-- [ ] 解决打包后index.html乱码
+- [x] 解决打包后index.html乱码
