@@ -7,6 +7,7 @@ import router from '@/router'
 import VueCompositionAPI from '@vue/composition-api'
 
 Vue.use(VueCompositionAPI)
+
 Vue.config.productionTip = false
 Vue.config.devtools = true
 const app = createApp({

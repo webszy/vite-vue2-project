@@ -6,6 +6,8 @@ import usePluginImport from 'vite-plugin-importer'
 import legacy from '@vitejs/plugin-legacy'
 import compress from 'vite-plugin-compress'
 import ScriptSetup from 'unplugin-vue2-script-setup/vite'
+import eslintPlugin from "@nabla/vite-plugin-eslint";
+
 import pkg from './package.json'
 
 const baseConfig = {
@@ -16,10 +18,10 @@ const baseConfig = {
         dedupe: ["vue-demi"],
     },
     build: {
-        minify: true,
+        minify: 'esbuild',
         assetsDir:'./static',
-        sourcemap:false,
-        manifest:true
+        sourcemap: false,
+        manifest: true
     },
     plugins: [
         createVuePlugin(/* options */),
@@ -33,7 +35,25 @@ const baseConfig = {
             targets: ["> 1%", "last 4 versions", "not dead"]
         }),
         compress(),
-        ScriptSetup({ refTransform: true })
+        ScriptSetup({ refTransform: true }),
+        eslintPlugin({
+            shouldLint:(path) => {
+                if(path.indexOf('.vue?')>-1){
+                    return false
+                }
+                const realPath = path.split('?')[0]
+                let fileExt = ''
+                if(realPath.indexOf('/.') > -1){
+                    fileExt =  realPath.replace(/\/./g,'').split('.')[1]
+                } else {
+                    fileExt = realPath.split('.')[1]
+                }
+                // const fileExt = realPath.match(/\.(vue|js?x|ts?x)(\?.*)?$/)
+                const isIgnorePath = ['node_modules','.vite'].every(e=>realPath.indexOf(e) === -1)
+                const allowFileType = ['vue','js','jsx','ts','tsx'].includes(fileExt)
+                return isIgnorePath && allowFileType
+            }
+        })
     ],
     css:{
         postcss:{
@@ -46,8 +66,7 @@ const baseConfig = {
     },
     server:{
         host:'0.0.0.0',
-        port:8080,
-        open: true
+        port:8080
     },
     define:{
         buildTime: JSON.stringify(new Date().toLocaleString()),

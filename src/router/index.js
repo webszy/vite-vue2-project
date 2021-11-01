@@ -10,6 +10,10 @@ const routes = [
     }
 ]
 export default new VueRouter({
+    scrollBehavior: () => ({
+        y: 0,
+        x: 0,
+    }),
     base: "/",
     mode: "hash",
     routes,
