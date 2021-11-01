@@ -1,0 +1,116 @@
+@charset "utf-8";
+/*******globe***********/
+
+body,
+div,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+tr,
+td,
+th,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+fieldset,
+figure {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* --swiper-theme-color:#c2c2c2;*/
+  --swiper-theme-color: #fff;
+  --swiper-preloader-color: #e0e0e0;
+  --promotion-angle-color:#ff625d;
+  --safe-top:10px;
+  --safe-bottom:10px;
+  --setting-close-top:28px;
+
+}
+html {
+  font-size: 26.67vw;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  touch-action: manipulation;
+  /* -webkit-touch-callout: none; */
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  /* transform: translateZ(0); */
+  -webkit-overflow-scrolling: touch;
+}
+
+html body {
+  background-color: #fff;
+  /* user-select: none; */
+  /* overflow-x: hidden; */
+}
+
+img {
+  border: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+ins {
+  text-decoration: none;
+}
+input,
+button {
+  outline: none;
+  padding: 0;
+  border: none;
+  border: 0;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+/* my css utils */
+.rounded-half{
+  border-radius: 50%;
+}
+.w-fit{
+width: fit-content;
+}
+.m-0-auto{
+  margin:0 auto;
+}
+.pointer{
+  cursor: pointer;
+}
+.fff{
+  color: #fff;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animated.fastest{
+  -webkit-animation-duration:.1s;animation-duration:.1s
+}
+.flex_1{
+  flex:1;
+}
