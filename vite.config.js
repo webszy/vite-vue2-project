@@ -7,7 +7,9 @@ import legacy from '@vitejs/plugin-legacy'
 import compress from 'vite-plugin-compress'
 import ScriptSetup from 'unplugin-vue2-script-setup/vite'
 import eslintPlugin from "@nabla/vite-plugin-eslint";
-
+import Autoprefixer from 'autoprefixer'
+import PostcssPxtorem from 'postcss-pxtorem'
+import PostcssNested from 'postcss-nested'
 import pkg from './package.json'
 
 const baseConfig = {
@@ -58,9 +60,9 @@ const baseConfig = {
     css:{
         postcss:{
             plugins: [
-                require('autoprefixer')({overrideBrowserslist:["> 1%", "last 4 versions", "not dead","iOS >= 11","Android > 4"]}),
-                require('postcss-pxtorem')({rootValue: 100,propList: ['*']}),
-                require('postcss-nested')
+                Autoprefixer({overrideBrowserslist:["> 1%", "last 4 versions", "not dead","iOS >= 11","Android > 4"]}),
+                PostcssPxtorem({rootValue: 100,propList: ['*']}),
+                PostcssNested()
             ]
         }
     },

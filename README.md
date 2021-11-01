@@ -50,3 +50,6 @@
 + 不支持top level await,仍需要使用async await
 + 不支持ref surge 语法糖，例如ref:xxx
 + 其他不被@vue/composition-api 支持的语法
+
+## TODO
+- [ ] 解决打包后index.html乱码
