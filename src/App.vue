@@ -2,7 +2,6 @@
     <router-view />
 </template>
 <script>
-import {closeNativeLoading, getDeviceInfo} from '@/utils/jsBridge'
 import { isIphonex } from '@/utils'
 export default {
   name:'BaseLine3',
@@ -24,7 +23,6 @@ export default {
       window._dsfag()
       // this.showTest = true
     }
-    getDeviceInfo()
     // 当顶部是刘海屏时
     const iphonex = isIphonex()
     //顶部47，顶部34

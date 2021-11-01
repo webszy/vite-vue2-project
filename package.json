@@ -2,11 +2,11 @@
   "name": "baseline",
   "version": "3.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/src/main.js",
   "scripts": {
-    "dev": "cross-env vite --mode sandbox",
-    "build": "cross-env vite build --mode production",
-    "build:test": "cross-env  vite build --mode sandbox",
+    "dev": "vite --mode sandbox",
+    "build": "vite build --mode production",
+    "build:test": "vite build --mode sandbox",
     "preview": "vite preview --mode sandbox",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
