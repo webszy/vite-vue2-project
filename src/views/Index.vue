@@ -1,16 +1,18 @@
 <template>
   <div class="w-full h-full">
     Index
-    <van-button type="warning">123</van-button>
+    <van-button type="warning">{{ a }}</van-button>
   </div>
 </template>
 
-<script>
+<script setup>
 import {Button as VanButton} from 'vant'
-export default {
-  name: "Index",
-  components: {VanButton}
-}
+import {ref,onMounted} from '@vue/composition-api'
+const a = ref(123)
+onMounted(()=>{
+  console.log('component did mount')
+})
+
 </script>
 
 <style scoped>

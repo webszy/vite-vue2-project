@@ -20,8 +20,12 @@ export default {
       version:window.VITE_APP_VERSION
     }
     if(import.meta.env.VITE_APP_ENV === 'sandbox' && import.meta.env.MODE === 'production'){
-      window._dsfag()
-      // this.showTest = true
+      const s = document.createElement('script')
+      s.src = 'https://cdn.jsdelivr.net/npm/vconsole@3.9.4/dist/vconsole.min.js'
+      document.body.appendChild(s)
+      s.onload = function () {
+        new window.VConsole()
+      }
     }
     // 当顶部是刘海屏时
     const iphonex = isIphonex()
