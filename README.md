@@ -9,7 +9,7 @@
 + [@vue/composition-api](https://github.com/vuejs/composition-api)
 + [postcss-nested](https://github.com/postcss/postcss-nested)
 + [windiCss]( https://windicss.org/utilities/typography.html)
-
++ [Vue-Use](https://vueuse.org/)
 ## 支持的语法
 + script setup
 
@@ -39,7 +39,7 @@
 + Atom css lib
  使用了windiCss，基本类似与TailwindCss
  参见 https://windicss.org/utilities/typography.html
-  +
++ 增加vueUse，里面有大量工具函数
 ## 不支持的语法
 
 + vue3中template无需一个根节点，vue2仍需要

@@ -14,11 +14,15 @@ import Autoprefixer from 'autoprefixer'
 import {version} from './package.json'
 export default defineConfig(({command,mode})=>{
     const baseConfig = {
+        optimizeDeps: {
+            exclude: ['vue-demi']
+        },
         resolve: {
             alias: {
                 "@": path.resolve(__dirname, "src"),
             },
             dedupe: ["vue-demi"],
+
         },
         build: {
             minify: 'esbuild',
