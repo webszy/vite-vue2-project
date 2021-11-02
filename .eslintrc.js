@@ -24,6 +24,6 @@ module.exports = {
     'space-before-function-paren': 'off',
     'new-cap':'off',
     'double-quotes':'off',
-    'object-curly-spacing':'off'
+    'object-curly-spacing':'off',
   }
 }

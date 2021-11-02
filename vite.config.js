@@ -8,7 +8,6 @@ import viteCompression from 'vite-plugin-compression'
 import ScriptSetup from 'unplugin-vue2-script-setup/vite'
 import eslintPlugin from "@nabla/vite-plugin-eslint"
 import PostcssPxtorem from 'postcss-pxtorem'
-import PostcssNested from 'postcss-nested'
 import ImageLoader from '@rollup/plugin-image'
 import Autoprefixer from 'autoprefixer'
 
@@ -64,7 +63,6 @@ export default defineConfig(({command,mode})=>{
                 plugins: [
                     Autoprefixer({overrideBrowserslist:["> 1%", "last 4 versions", "not dead","iOS >= 11","Android > 4"]}),
                     PostcssPxtorem({rootValue: 100,propList: ['*']}),
-                    PostcssNested()
                 ]
             }
         },

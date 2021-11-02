@@ -1,6 +1,5 @@
 # Vite-Vue2-Project
-这是一个过渡模板，在vue2上尽量支持vue3的语法，以便以后可以实现平滑升级。
-
+这是一个过渡模板，在vue2的基础上尽量支持vue3的语法，以便以后可以实现平滑升级。
 
 
 ## 使用前
@@ -33,23 +32,21 @@
 
    如果是常量，建议在vite.config.js中baseConfig.define中配置。
    如果是变量，则在相应的.env文件中定义[参见文档](https://cn.vitejs.dev/guide/env-and-mode.html#env-files)
-
-+ 支持css嵌套写法(like SASS)
-
-   参见https://github.com/postcss/postcss-nested
-
+  
  + 自动转换px为rem
 
     配置参考vite.config.js中baseConfig.css.postcss.plugin
 + Atom css lib
  使用了windiCss，基本类似与TailwindCss
  参见 https://windicss.org/utilities/typography.html
+  +
 ## 不支持的语法
 
 + vue3中template无需一个根节点，vue2仍需要
 + 不支持top level await,仍需要使用async await
-+ 不支持ref surge 语法糖，例如ref:xxx
++ 不支持ref surge，例如ref:xxx
 + 其他不被@vue/composition-api 支持的语法
 
 ## TODO
 - [x] 解决打包后index.html乱码
+- [ ] 打包完成后自动压缩为zip包

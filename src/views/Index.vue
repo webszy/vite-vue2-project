@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-full">
-    Index
+  <div class="w-full h-full a">
+    <p>Index</p>
     <van-button type="warning">{{ a }}</van-button>
   </div>
 </template>
