@@ -7,7 +7,6 @@
 + [vue3文档](https://v3.cn.vuejs.org/)
 + [vite配置文档](https://cn.vitejs.dev/config/)
 + [@vue/composition-api](https://github.com/vuejs/composition-api)
-+ [postcss-nested](https://github.com/postcss/postcss-nested)
 + [windiCss]( https://windicss.org/utilities/typography.html)
 + [Vue-Use](https://vueuse.org/)
 ## 支持的语法
