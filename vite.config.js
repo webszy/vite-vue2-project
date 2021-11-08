@@ -10,6 +10,7 @@ import eslintPlugin from "@nabla/vite-plugin-eslint"
 import PostcssPxtorem from 'postcss-pxtorem'
 import ImageLoader from '@rollup/plugin-image'
 import Autoprefixer from 'autoprefixer'
+import viteRequire from "vite-plugin-require"
 
 import {version} from './package.json'
 export default defineConfig(({command,mode})=>{
@@ -60,7 +61,8 @@ export default defineConfig(({command,mode})=>{
                     return isIgnorePath && allowFileType
                 }
             }),
-            ImageLoader()
+            ImageLoader(),
+            viteRequire({fileRegex:/(.jsx?|.tsx?|.vue)$/})
         ],
         css:{
             postcss:{
