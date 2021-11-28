@@ -15,20 +15,15 @@ import viteRequire from "vite-plugin-require"
 import {version} from './package.json'
 export default defineConfig(({command,mode})=>{
     const baseConfig = {
-        optimizeDeps: {
-            exclude: ['vue-demi']
-        },
         resolve: {
             alias: {
                 "@": path.resolve(__dirname, "src"),
             },
-            dedupe: ["vue-demi"],
-
         },
         build: {
             minify: 'esbuild',
             // assetsDir:'./static',
-            sourcemap: false,
+            sourcemap: mode === 'sandbox',
             manifest: true
         },
         plugins: [
@@ -77,13 +72,18 @@ export default defineConfig(({command,mode})=>{
             port:8080
         },
         define:{
-            buildTime: JSON.stringify(new Date().toLocaleString()),
-            VITE_APP_VERSION: JSON.stringify(version)
+            _env:JSON.stringify({
+                buildTime:new Date().toLocaleString(),
+                ver:version,
+                isProduction:mode === 'production',
+                isSandbox:mode === 'sandbox',
+                mode,
+                isServe:command === 'serve'
+            })
         }
     }
-    if(mode === 'sandbox'){
-        baseConfig.build.sourcemap = true
+    if(mode === 'production'){
+        baseConfig.plugins.push(viteCompression())
     }
-    baseConfig.plugins.push(viteCompression())
     return baseConfig
 })
