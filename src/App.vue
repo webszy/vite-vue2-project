@@ -2,7 +2,7 @@
     <router-view />
 </template>
 <script setup>
-import { isIphonex } from '@/utils'
+import { isIphonex } from '~/utils'
 
     window._env = _env
     if(_env.isSandbox && _env.isServe){

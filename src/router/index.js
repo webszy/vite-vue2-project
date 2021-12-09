@@ -1,5 +1,5 @@
 import Vue from "vue"
-import Index from "@/views/Index.vue"
+import Index from "~/views/Index.vue"
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 const routes = [

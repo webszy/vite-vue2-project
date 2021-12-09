@@ -10,14 +10,14 @@ import eslintPlugin from "@nabla/vite-plugin-eslint"
 import PostcssPxtorem from 'postcss-pxtorem'
 import ImageLoader from '@rollup/plugin-image'
 import Autoprefixer from 'autoprefixer'
-import viteRequire from "vite-plugin-require"
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 
 import {version} from './package.json'
 export default defineConfig(({command,mode})=>{
     const baseConfig = {
         resolve: {
             alias: {
-                "@": path.resolve(__dirname, "src"),
+                "~": path.resolve(__dirname, "src"),
             },
         },
         build: {
@@ -32,7 +32,7 @@ export default defineConfig(({command,mode})=>{
             usePluginImport({
                 libraryName: 'vant',
                 libraryDirectory: 'es',
-                style: (name) => `${name}/index.css`,
+                style: (name) => `${name}/style/index.js`,
             }),
             legacy({
                 targets: ["> 1%", "last 4 versions", "not dead"]
@@ -57,7 +57,7 @@ export default defineConfig(({command,mode})=>{
                 }
             }),
             ImageLoader(),
-            viteRequire({fileRegex:/(.jsx?|.tsx?|.vue)$/})
+            viteCommonjs()
         ],
         css:{
             postcss:{
