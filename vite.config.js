@@ -86,6 +86,13 @@ export default defineConfig(({command,mode})=>{
     }
     if(mode === 'production'){
         baseConfig.plugins.push(viteCompression())
+    } else if(mode === 'report'){
+        baseConfig.plugins.push(visualizer({
+            filename: path.resolve(baseConfig.cacheDir,'./visualizer/stats.html'),
+            open: true,
+            gzipSize: true,
+            brotliSize: true
+        }))
     }
     return baseConfig
 })
