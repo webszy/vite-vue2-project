@@ -11,10 +11,12 @@ import PostcssPxtorem from 'postcss-pxtorem'
 import ImageLoader from '@rollup/plugin-image'
 import Autoprefixer from 'autoprefixer'
 import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
+import { visualizer } from 'rollup-plugin-visualizer';
 
 import {version} from './package.json'
 export default defineConfig(({command,mode})=>{
     const baseConfig = {
+        cacheDir:path.resolve(__dirname,'.cache'),
         resolve: {
             alias: {
                 "~": path.resolve(__dirname, "src"),
